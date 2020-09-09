@@ -23,11 +23,11 @@ function LoginPage({ title }) {
 
   return (
     <div className="login">
-      <h1>Welcome!</h1>
-      <Form>
+      <h1 style={{ fontFamily: "Kumbh Sans", margin: "50px 0" }}>Welcome!</h1>
+      <Form className="loginForm">
         <FormGroup>
-          <label htmlFor="#username">Username</label>
           <FormInput
+            style={{ fontFamily: "Kumbh Sans" }}
             className="username-input"
             id="#username"
             placeholder="Username"
@@ -35,7 +35,12 @@ function LoginPage({ title }) {
           />
         </FormGroup>
         <FormGroup>
-          <Button onClick={(e) => handleSubmit(e)}>Start chatting!</Button>
+          <Button
+            style={{ fontFamily: "Kumbh Sans", width: "150px" }}
+            onClick={(e) => handleSubmit(e)}
+          >
+            Start chatting!
+          </Button>
         </FormGroup>
       </Form>
     </div>

@@ -46,7 +46,7 @@ const Messages = ({ user }) => {
   }
 
   return (
-    <>
+    <div className="messages">
       {data.messages.map(({ id, user: messageUser, content }) => (
         <div
           style={{
@@ -61,11 +61,12 @@ const Messages = ({ user }) => {
                 height: 50,
                 width: 50,
                 marginRight: "0.5em",
-                border: "2px solid #e5e6ea",
+                border: "2px solid #007bff",
+                color: "#007bff",
                 borderRadius: 25,
                 textAlign: "center",
                 fontSize: "18pt",
-                paddingTop: 5,
+                paddingTop: 8,
               }}
             >
               {messageUser.slice(0, 2).toUpperCase()}
@@ -73,8 +74,8 @@ const Messages = ({ user }) => {
           )}
           <div
             style={{
-              background: user === messageUser ? "blue" : "#e5e6ea",
-              color: user === messageUser ? "white" : "black",
+              background: "#007bff",
+              color: "white",
               padding: "1em",
               borderRadius: "1em",
               maxWidth: "60%",
@@ -84,7 +85,7 @@ const Messages = ({ user }) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
@@ -108,9 +109,15 @@ const Chat = () => {
     });
   };
   return (
-    <Container>
+    <Container
+      style={{
+        background: "rgba(255,255,255,0.6)",
+        borderRadius: "10px",
+        padding: "10px",
+      }}
+    >
       <Messages user={state.user} />
-      <Row>
+      <Row style={{ margin: 0, marginTop: "15px" }}>
         <Col xs={2} style={{ padding: 0 }}>
           <FormInput readOnly label="User" value={state.user} />
         </Col>
@@ -132,7 +139,10 @@ const Chat = () => {
           />
         </Col>
         <Col xs={2} style={{ padding: 0 }}>
-          <Button onClick={() => onSend()} style={{ width: "100%" }}>
+          <Button
+            onClick={() => onSend()}
+            style={{ width: "100%", fontFamily: "Kumbh Sans" }}
+          >
             Send
           </Button>
         </Col>
