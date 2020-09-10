@@ -16,5 +16,7 @@ yarn start
 ```
 
 ## Todos:
+- [ ] Dockerify the project
 - [ ] Make a proper registration
 - [ ] Add an ability to send files
+- [ ] Think about adding video and audio live calls
